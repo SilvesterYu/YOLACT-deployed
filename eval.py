@@ -593,21 +593,23 @@ def badhash(x):
     return x
 
 def evalimage(net:Yolact, path:str, save_path:str=None):
-    frame = torch.from_numpy(cv2.imread(path)).cuda().float()
-    batch = FastBaseTransform()(frame.unsqueeze(0))
-    preds = net(batch)
+    try:
+        frame = torch.from_numpy(cv2.imread(path)).cuda().float()
+        batch = FastBaseTransform()(frame.unsqueeze(0))
+        preds = net(batch)
 
-    img_numpy = prep_display(preds, frame, None, None, undo_transform=False)
-    
-    if save_path is None:
-        img_numpy = img_numpy[:, :, (2, 1, 0)]
+        img_numpy = prep_display(preds, frame, None, None, undo_transform=False)
+        
+        if save_path is None:
+            img_numpy = img_numpy[:, :, (2, 1, 0)]
 
-    if save_path is None:
-        plt.imshow(img_numpy)
-        plt.title(path)
-        plt.show()
-    else:
-        cv2.imwrite(save_path, img_numpy)
+        if save_path is None:
+            plt.imshow(img_numpy)
+            plt.title(path)
+            plt.show()
+        else:
+            cv2.imwrite(save_path, img_numpy)
+    except Exception as e: print("Error : Cannot open "+str(path)+". "+str(e)+"\n\n")
 
 def evalimages(net:Yolact, input_folder:str, output_folder:str):
     if not os.path.exists(output_folder):
