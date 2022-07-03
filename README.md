@@ -23,6 +23,11 @@ python3 ./yolact/eval.py --trained_model=/home/pk2269/Downloads/yolact/weights/l
 
 ```
 
+```
+python ./YOLACT/eval.py --trained_model=/home/silvey/Documents/GitHub/YOLACT/weights/leaves_detection_8333_800000.pth --config=yolact_darknet53_leaves_custom_config --score_threshold=0.15 --top_k=15 --images=test_images:output_images
+
+```
+
 A simple, fully convolutional model for real-time instance segmentation. This is the code for our papers:
  - [YOLACT: Real-time Instance Segmentation](https://arxiv.org/abs/1904.02689)
  - [YOLACT++: Better Real-time Instance Segmentation](https://arxiv.org/abs/1912.06218)
