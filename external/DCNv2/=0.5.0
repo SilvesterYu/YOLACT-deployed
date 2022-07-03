@@ -1,0 +1,6 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: torchvision in /home/pk2269/.local/lib/python3.6/site-packages (0.5.0)
+Requirement already satisfied: torch==1.4.0 in /home/pk2269/.local/lib/python3.6/site-packages (from torchvision) (1.4.0)
+Requirement already satisfied: numpy in /home/pk2269/.local/lib/python3.6/site-packages (from torchvision) (1.19.5)
+Requirement already satisfied: pillow>=4.1.1 in /home/pk2269/.local/lib/python3.6/site-packages (from torchvision) (8.4.0)
+Requirement already satisfied: six in /home/pk2269/.local/lib/python3.6/site-packages (from torchvision) (1.16.0)
