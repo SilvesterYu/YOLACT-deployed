@@ -8,6 +8,21 @@
        ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝   ╚═╝ 
 ```
 
+
+From Pi
+
+Create two folders outside YOLACT named test_images and output_images
+
+Download weights from [here](https://drive.google.com/drive/folders/1K3x1a_0QyW50lG-NpA6BFEMgdYgBtoXI?usp=sharing)
+
+Put them in weights folder in yolact
+
+Run evaluation with 
+```
+python3 ./yolact/eval.py --trained_model=/home/pk2269/Downloads/yolact/weights/leaves_detection_1101_105719_interrupt.pth --config=yolact_darknet53_leaves_custom_config --score_threshold=0.15 --top_k=15 --images=test_images:output_images
+
+```
+
 A simple, fully convolutional model for real-time instance segmentation. This is the code for our papers:
  - [YOLACT: Real-time Instance Segmentation](https://arxiv.org/abs/1904.02689)
  - [YOLACT++: Better Real-time Instance Segmentation](https://arxiv.org/abs/1912.06218)
